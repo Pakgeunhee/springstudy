@@ -17,4 +17,16 @@ public class MvcController {
 	public String second() {
 		return "second";
 	}
+	@RequestMapping("/third.do")
+	public String third() {
+		return "third";
+	}
+	@RequestMapping("/fourth.do")
+	public String fourth() {
+		return "fourth";
+	}
+	@RequestMapping("/fifth.do")
+	public String fifth() {
+		return "fifth";
+	}
 }
