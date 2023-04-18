@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class MvcController {
 	@GetMapping("/")
-	public String welcom() {
+	public String welcome() {
 		return "index";
 	}
 }
