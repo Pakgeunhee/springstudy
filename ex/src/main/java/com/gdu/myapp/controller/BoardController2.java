@@ -47,6 +47,7 @@ public class BoardController2 {
 	private BoardService boardService;
 	
 	@GetMapping("/board/detail1.do")
+	
 	public String detail1(int boardNo, Model model) {
 		BoardDTO board = boardService.detail1(boardNo);
 		model.addAttribute("board", board);
