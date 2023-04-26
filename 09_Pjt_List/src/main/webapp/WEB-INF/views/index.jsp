@@ -12,6 +12,13 @@
 <script src="${contextPath}/resources/js/lib/jquery-3.6.4.min.js"></script>
 </head>
 <body>
-	<a href="${contextPath}/employees/pagination.do">페이징</a>
+
+	<div>
+		<a href="${contextPath}/employees/pagination.do">페이징</a>
+	</div>
+	<div>
+		<a href="${contextPath}/employees/scroll.page">스크롤</a>
+	</div>
+	
 </body>
 </html>
