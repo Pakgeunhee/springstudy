@@ -26,6 +26,15 @@
 	})
 </script>
 <style>
+	.title {
+		cursor: pointer;
+	}
+	.title:hover {
+		color: gray;
+	}
+	.title:active {
+		color: silver;
+	}
 	.pagination {
 		width: 350px;
 		margin: 0 auto;
@@ -54,7 +63,7 @@
 </head>
 <body>
 	<div>
-		<a href="${contextPath}/employees/search.form">사원 조회 화면으로 이동</a>		
+		<a href="${contextPath}/employees/search.do">사원 조회 화면으로 이동</a>		
 	</div>
 	<div>
 		<h1>사원 목록</h1>
@@ -86,7 +95,7 @@
 			<tbody>
 				<c:forEach items="${employees}" var="emp" varStatus="vs">
 					<tr>
-						<td>${beginNumber - vs.index}</td>
+						<td>${beginNo - vs.index}</td>
 						<td>${emp.employeeId}</td>
 						<td>${emp.firstName} ${emp.lastName}</td>
 						<td>${emp.email}</td>
