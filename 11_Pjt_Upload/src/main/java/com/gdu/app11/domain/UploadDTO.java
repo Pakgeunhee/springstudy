@@ -15,4 +15,5 @@ public class UploadDTO {
 	private String uploadContent;
 	private Timestamp createdAt;
 	private Timestamp modifiedAt;
+	private int attachCount;
 }

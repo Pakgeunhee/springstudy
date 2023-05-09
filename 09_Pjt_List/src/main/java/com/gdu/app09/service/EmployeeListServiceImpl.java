@@ -181,11 +181,11 @@ public class EmployeeListServiceImpl implements EmployeeListService {
 	
 	 @Override
 	public Map<String, Object> getAutoComplete(HttpServletRequest request) {
-       // 파라미터 column이 전달되지 않는 경우 column=""로 처리한다.
+       // 파라미터 column이 전달되지 않는 경우 column=""로 처리한다. (검색할 칼럼)
        Optional<String> opt1 = Optional.ofNullable(request.getParameter("column"));      
        String column = opt1.orElse("");
        
-       // 파라미터 query이 전달되지 않는 경우 query=""로 처리한다.
+       // 파라미터 query이 전달되지 않는 경우 query=""로 처리한다. (검색어)
        Optional<String> opt2 = Optional.ofNullable(request.getParameter("query"));        
        String query = opt2.orElse("");
        

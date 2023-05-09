@@ -62,7 +62,6 @@ public class PageUtil {
 	}
 	
 	public String getPagination(String path) {
-		StringBuilder sb = new StringBuilder();
 		
 		// path에 ?가 포함되어 있으면 이미 파라미터가 포함된 경로이므로 &를 붙여서 page 파라미터를 추가한다.
 		if(path.contains("?")) {
@@ -70,6 +69,8 @@ public class PageUtil {
 		} else {
 			path += "?";	// path = "/app09/employees/pagination.do?"
 		}
+		
+		StringBuilder sb = new StringBuilder();
 		
 		sb.append("<div class=\"pagination\">");
 
