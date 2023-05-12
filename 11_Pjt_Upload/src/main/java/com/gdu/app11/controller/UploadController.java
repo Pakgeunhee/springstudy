@@ -1,11 +1,13 @@
 package com.gdu.app11.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.Resource;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
@@ -49,5 +51,21 @@ public class UploadController {
 	@GetMapping("/display.do")
 	public ResponseEntity<byte[]> display(@RequestParam("attachNo") int attachNo) {
 		return uploadService.display(attachNo);
+	}
+	
+	@GetMapping("/download.do")
+	public ResponseEntity<Resource> download(@RequestParam("attachNo") int attachNo, @RequestHeader("User-Agent") String userAgent) {
+		return uploadService.download(attachNo, userAgent);
+	}
+	
+	@GetMapping("/downloadAll.do")
+	public ResponseEntity<Resource> downloadAll(@RequestParam("uploadNo") int uploadNo) {
+		return uploadService.downloadAll(uploadNo);
+	}
+	
+	@PostMapping("/removeUpload.do")
+	public String removeUpload(@RequestParam("uploadNo") int uploadNo, RedirectAttributes redirectAttributes) {
+		redirectAttributes.addFlashAttribute("removeResult", uploadService.removeUpload(uploadNo));
+		return "redirect:/upload/list.do";
 	}
 }
